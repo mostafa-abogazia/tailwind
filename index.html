@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Landing Page</title>
+    <!-- Add Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hero-image {
+            background-image: url('https://mpresafamtech.wordpress.com/wp-content/uploads/2022/10/ai_image.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        #mobile-menu a {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        #mobile-menu.show a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hover effect for links with underline */
+        #menu a,
+        #mobile-menu a {
+            position: relative;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        #menu a::after,
+        #mobile-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #1D4ED8; /* Tailwind's blue-600 color */
+            transition: width 0.3s ease-in-out;
+        }
+
+        #menu a:hover::after,
+        #mobile-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Link colors for mobile menu */
+        #mobile-menu a {
+            color: #ffffff; /* White color for better visibility */
+        }
+
+        #mobile-menu a:hover {
+            color: #60a5fa; /* Tailwind's light-blue-400 color */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 left-0 z-50"><div class="container mx-auto flex justify-between items-center p-6"><a href="#" class="text-3xl font-bold text-blue-600">TechSolutions</a><button id="menu-button" class="block lg:hidden p-2 border rounded-md text-gray-800 hover:bg-gray-200 focus:outline-none relative"><!-- Menu Icon --><svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg><!-- X Icon --><svg id="x-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button><div id="menu" class="hidden lg:flex space-x-8"><a href="#home" class="text-gray-800 hover:text-blue-600 transition duration-300 ease-in-out">Home</a><a href="#about" class="text-gray-800 hover:text-blue-600 transition duration-300 ease-in-out">About</a><a href="#services" class="text-gray-800 hover:text-blue-600 transition duration-300 ease-in-out">Services</a><a href="#contact" class="text-gray-800 hover:text-blue-600 transition duration-300 ease-in-out">Contact</a></div></div><!-- Mobile Menu --><div id="mobile-menu" class="lg:hidden fixed inset-0 bg-gray-900 bg-opacity-90 z-40 hidden flex flex-col items-center justify-center space-y-8"><a href="#home" class="text-white text-2xl hover:text-blue-400 transition duration-300 ease-in-out">Home</a><a href="#about" class="text-white text-2xl hover:text-blue-400 transition duration-300 ease-in-out">About</a><a href="#services" class="text-white text-2xl hover:text-blue-400 transition duration-300 ease-in-out">Services</a><a href="#contact" class="text-white text-2xl hover:text-blue-400 transition duration-300 ease-in-out">Contact</a></div></nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-image flex items-center justify-center h-screen bg-black bg-opacity-50">
+        <div class="p-8 text-center text-white bg-black bg-opacity-60 rounded-lg shadow-lg">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Empowering Your Business with Technology</h1>
+            <p class="text-lg md:text-xl mb-8">Innovative solutions to elevate your business to the next level. Discover how we can help you today!</p>
+            <a href="#services" class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300">Explore Our Solutions</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 text-center">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-blue-600">About Us</h2>
+            <p class="text-lg text-gray-700 mb-6">At TechSolutions, we specialize in providing cutting-edge technology solutions tailored to meet your business needs. Our team of experts is dedicated to delivering exceptional results and driving your success.</p>
+            <img src="https://www.shutterstock.com/shutterstock/photos/1932042689/display_1500/stock-photo-businessman-using-mobile-smart-phone-business-global-internet-connection-application-technology-1932042689.jpg" alt="About Us" class="w-full md:w-2/3 mx-auto rounded-lg shadow-lg">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-gray-200 py-16 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8 text-blue-600">Our Services</h2>
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <img src="https://media.istockphoto.com/id/2148063382/photo/data-cube-abstract-cubic-structure-symbol-of-technology-research-and-digital-architecture.jpg?s=2048x2048&w=is&k=20&c=MMGAH6Bacvw72spx5VDmiGITjzNZVdAsqUITCLFTWZM=" alt="Service 1" class="w-full h-32 object-cover rounded-lg mb-4">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-600">Custom Software Development</h3>
+                        <p class="text-gray-700">We create tailored software solutions that meet your specific business requirements, ensuring optimal performance and functionality.</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <img src="https://media.istockphoto.com/id/1199145131/photo/technical-support-concept-maintenance-sign-wrench-and-srewdriver-tools-tech-issues-fix-service.jpg?s=2048x2048&w=is&k=20&c=q6KOqfemZxi1Ct4LU4wwYWY8vvAgMxfqhuWxYxpD7nE=" alt="Service 2" class="w-full h-32 object-cover rounded-lg mb-4">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-600">Tech Consulting</h3>
+                        <p class="text-gray-700">Our expert consultants provide valuable insights and strategies to help you leverage technology for your business growth.</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <img src="https://media.istockphoto.com/id/896358708/photo/light-bulb-with-brain-inside-the-hands-of-the-businessman.jpg?s=2048x2048&w=is&k=20&c=chCzFV9qW3rsv49uP72TjNZPMSusLx0XKH0BhAfR8LQ=" alt="Service 3" class="w-full h-32 object-cover rounded-lg mb-4">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-600">24/7 Support</h3>
+                        <p class="text-gray-700">Our dedicated support team is available around the clock to assist you with any technical issues or inquiries you may have.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-blue-600 text-white py-16 px-6 text-center">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-8">Get in Touch</h2>
+            <p class="text-lg mb-6">We’d love to hear from you. Reach out to us for any questions or to discuss how we can help your business thrive.</p>
+            <a href="mailto:contact@techsolutions.com" class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-200 transition duration-300">Send Email</a>
+        </div>
+    </section>
+
+    <!-- Toggle Menu Script -->
+    <script>
+    const menuButton = document.getElementById('menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const xIcon = document.getElementById('x-icon');
+
+        menuButton.addEventListener('click', function () {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('show');
+            menuIcon.classList.toggle('hidden');
+            xIcon.classList.toggle('hidden');
+
+            // Make sure X icon is on top of the menu
+            xIcon.style.zIndex = '50';
+        });
+
+        xIcon.addEventListener('click', function () {
+            menu.classList.add('hidden');
+            menu.classList.remove('show');
+            xIcon.classList.add('hidden');
+            menuIcon.classList.remove('hidden');
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function () {
+                menu.classList.add('hidden');
+                menu.classList.remove('show');
+                xIcon.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+            });
+        });
+
+    </script>
+</body>
+</html>
